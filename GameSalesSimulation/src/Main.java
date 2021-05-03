@@ -9,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		UserManager userManager = new UserManager(new ValidationAdapter());
-		User user = new User("31246312978", "Hikmet", "Tütüncü", 1996);
+		User user = new User("TC IDENTITY", "Hikmet", "TÃ¼tÃ¼ncÃ¼", 1996);
 		
 		userManager.addUser(user);
 		
