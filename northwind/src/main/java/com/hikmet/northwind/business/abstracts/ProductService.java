@@ -7,6 +7,7 @@ import java.util.List;
 import com.hikmet.northwind.core.utilities.results.DataResult;
 import com.hikmet.northwind.core.utilities.results.Result;
 import com.hikmet.northwind.entities.concretes.Product;
+import com.hikmet.northwind.entities.concretes.dtos.ProductWithCategoryDto;
 
 public interface ProductService {
 	DataResult<List<Product>> getAll();
@@ -24,4 +25,6 @@ public interface ProductService {
 	
 	
 	DataResult<List<Product>> getByNameAndCategory(String productName,int id);
+	
+	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 }

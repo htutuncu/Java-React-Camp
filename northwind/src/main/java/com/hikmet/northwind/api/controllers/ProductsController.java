@@ -14,6 +14,7 @@ import com.hikmet.northwind.business.abstracts.ProductService;
 import com.hikmet.northwind.core.utilities.results.DataResult;
 import com.hikmet.northwind.core.utilities.results.Result;
 import com.hikmet.northwind.entities.concretes.Product;
+import com.hikmet.northwind.entities.concretes.dtos.ProductWithCategoryDto;
 
 @RestController
 @RequestMapping("/api/products")
@@ -63,5 +64,11 @@ public class ProductsController {
 	public DataResult<List<Product>> getByProductNameContains(@RequestParam String productName){
 		return this.productService.getByProductNameContains(productName);
 	}
+	
+	@GetMapping("/getProductWithCategoryDetails")
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+		return this.productService.getProductWithCategoryDetails();
+	}
+	
 	
 }

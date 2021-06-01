@@ -15,6 +15,7 @@ import com.hikmet.northwind.core.utilities.results.SuccessDataResult;
 import com.hikmet.northwind.core.utilities.results.SuccessResult;
 import com.hikmet.northwind.dataAccess.abstracts.ProductDao;
 import com.hikmet.northwind.entities.concretes.Product;
+import com.hikmet.northwind.entities.concretes.dtos.ProductWithCategoryDto;
 
 @Service
 public class ProductManager implements ProductService{
@@ -99,6 +100,12 @@ public class ProductManager implements ProductService{
 	public DataResult<List<Product>> getByNameAndCategory(String productName, int id) {
 		return new SuccessDataResult<List<Product>>
 		(this.productDao.getByNameAndCategory(productName,id),"Data listelendi.");
+	}
+
+	@Override
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+		return new SuccessDataResult<List<ProductWithCategoryDto>>
+		(this.productDao.getProductWithCategoryDetails(),"Data listelendi.");
 	}
 
 	
